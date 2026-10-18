@@ -1,6 +1,4 @@
-/* ===== Zmienne kolorów ===== */
 :root {
-    /* Motyw bazowy (jasny) */
     --color-bg:            #f5f3ef;
     --color-text:          #222;
     --color-text-muted:    #666;
@@ -10,6 +8,7 @@
 
     --color-nav-text:      #ecf0f1;
     --color-nav-hover-bg:  oklch(26.8% 0.011 36.5);
+    --color-nav-active:  oklch(36.7% 0.016 35.7);
 
     --color-card-bg:       #fff;
     --color-shadow:        rgba(0, 0, 0, 0.08);
@@ -17,18 +16,15 @@
 
     --color-footer-text:   #666;
 
-    /* Promienie i odstępy (opcjonalnie, dla spójności) */
     --radius-sm: 4px;
     --radius-md: 6px;
     --radius-lg: 8px;
 }
 
-/* ===== Reset ===== */
 * {
     box-sizing: border-box;
 }
 
-/* ===== Podstawa ===== */
 body {
     margin: 0;
     font-family: Georgia, "Times New Roman", serif;
@@ -37,7 +33,6 @@ body {
     line-height: 1.6;
 }
 
-/* ===== Nagłówek ===== */
 header {
     background: var(--color-header-bg);
     color: var(--color-header-text);
@@ -54,7 +49,6 @@ header h1 {
     font-size: 1.6rem;
 }
 
-/* ===== Nawigacja ===== */
 nav {
     display: flex;
     gap: 1.5rem;
@@ -73,14 +67,16 @@ nav a:hover {
     background: var(--color-nav-hover-bg);
 }
 
-/* ===== Główny kontener ===== */
+nav a.active {
+    background: var(--color-nav-active);
+}
+
 main {
     max-width: 900px;
     margin: 2rem auto;
     padding: 0 1rem;
 }
 
-/* ===== Sekcja hero ===== */
 .hero {
     background: var(--color-card-bg);
     padding: 2rem;
@@ -91,7 +87,6 @@ main {
     gap: 0.5rem;
 }
 
-/* ===== Galeria ===== */
 .gallery {
     list-style: none;
     padding: 0;
@@ -108,7 +103,6 @@ main {
     flex: 1 1 200px;
 }
 
-/* ===== Stopka ===== */
 footer {
     text-align: center;
     padding: 1.5rem;

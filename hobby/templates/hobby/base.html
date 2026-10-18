@@ -8,18 +8,23 @@
     <link rel="stylesheet" href="{% static 'hobby/style.css' %}">
 </head>
 <body>
-    <header>
-        <h1>Moje hobby</h1>
+<header>
+    <h1>Moje hobby</h1>
+    <nav>
         <nav>
-            <a href="{% url 'home' %}">Start</a>
-            <a href="{% url 'about' %}">O hobby</a>
-            <a href="{% url 'gallery' %}">Galeria</a>
+            <a href="{% url 'home' %}"
+               class="{% if request.path == '/' %}active{% endif %}">Start</a>
+            <a href="{% url 'about' %}"
+               class="{% if request.path == '/about/' %}active{% endif %}">O hobby</a>
+            <a href="{% url 'gallery' %}"
+               class="{% if request.path == '/gallery/' %}active{% endif %}">Galeria</a>
         </nav>
-    </header>
+    </nav>
+</header>
 
-    <main>
-        {% block content %}{% endblock %}
-    </main>
+<main>
+    {% block content %}{% endblock %}
+</main>
 
 </body>
 </html>
