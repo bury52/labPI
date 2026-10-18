@@ -1,16 +1,46 @@
-* { box-sizing: border-box; }
+/* ===== Zmienne kolorów ===== */
+:root {
+    /* Motyw bazowy (jasny) */
+    --color-bg:            #f5f3ef;
+    --color-text:          #222;
+    --color-text-muted:    #666;
 
+    --color-header-bg:     oklch(21.4% 0.009 43.1);
+    --color-header-text:   #fff;
+
+    --color-nav-text:      #ecf0f1;
+    --color-nav-hover-bg:  oklch(26.8% 0.011 36.5);
+
+    --color-card-bg:       #fff;
+    --color-shadow:        rgba(0, 0, 0, 0.08);
+    --color-shadow-soft:   rgba(0, 0, 0, 0.10);
+
+    --color-footer-text:   #666;
+
+    /* Promienie i odstępy (opcjonalnie, dla spójności) */
+    --radius-sm: 4px;
+    --radius-md: 6px;
+    --radius-lg: 8px;
+}
+
+/* ===== Reset ===== */
+* {
+    box-sizing: border-box;
+}
+
+/* ===== Podstawa ===== */
 body {
     margin: 0;
     font-family: Georgia, "Times New Roman", serif;
-    color: #222;
-    background: #f5f3ef;
+    color: var(--color-text);
+    background: var(--color-bg);
     line-height: 1.6;
 }
 
+/* ===== Nagłówek ===== */
 header {
-    background: #2c3e50;
-    color: #fff;
+    background: var(--color-header-bg);
+    color: var(--color-header-text);
     padding: 1.5rem 2rem;
     display: flex;
     flex-wrap: wrap;
@@ -19,40 +49,49 @@ header {
     gap: 1rem;
 }
 
-header h1 { margin: 0; font-size: 1.6rem; }
+header h1 {
+    margin: 0;
+    font-size: 1.6rem;
+}
 
+/* ===== Nawigacja ===== */
 nav {
     display: flex;
     gap: 1.5rem;
 }
 
 nav a {
-    color: #ecf0f1;
+    color: var(--color-nav-text);
     text-decoration: none;
     font-weight: bold;
     padding: 0.25rem 0.5rem;
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
     transition: background 0.2s;
 }
 
-nav a:hover { background: #34495e; }
+nav a:hover {
+    background: var(--color-nav-hover-bg);
+}
 
+/* ===== Główny kontener ===== */
 main {
     max-width: 900px;
     margin: 2rem auto;
     padding: 0 1rem;
 }
 
+/* ===== Sekcja hero ===== */
 .hero {
-    background: #fff;
+    background: var(--color-card-bg);
     padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 2px 6px var(--color-shadow);
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
 
+/* ===== Galeria ===== */
 .gallery {
     list-style: none;
     padding: 0;
@@ -62,16 +101,17 @@ main {
 }
 
 .gallery li {
-    background: #fff;
+    background: var(--color-card-bg);
     padding: 1rem 1.5rem;
-    border-radius: 6px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    border-radius: var(--radius-md);
+    box-shadow: 0 1px 4px var(--color-shadow-soft);
     flex: 1 1 200px;
 }
 
+/* ===== Stopka ===== */
 footer {
     text-align: center;
     padding: 1.5rem;
-    color: #666;
+    color: var(--color-footer-text);
     font-size: 0.9rem;
 }
