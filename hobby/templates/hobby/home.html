@@ -1,0 +1,10 @@
+{% extends "hobby/base.html" %}
+
+{% block title %}{{ hobby_name }} — Start{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <h2>{{ hobby_name }}</h2>
+    <p>{{ description }}</p>
+</section>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "hobby/base.html" %}
+
+{% block title %}Galeria{% endblock %}
+
+{% block content %}
+<section>
+    <h2>Galeria</h2>
+    <ul class="gallery">
+        {% for item in items %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock %}

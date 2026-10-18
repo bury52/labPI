@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Moje hobby{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'hobby/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Moje hobby</h1>
+        <nav>
+            <a href="{% url 'home' %}">Start</a>
+            <a href="{% url 'about' %}">O hobby</a>
+            <a href="{% url 'gallery' %}">Galeria</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+</body>
+</html>
